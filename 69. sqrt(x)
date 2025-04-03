@@ -1,0 +1,13 @@
+class Solution:
+    def mySqrt(self, x: int) -> int:
+               
+        a = int(x / (2 * int("1" + "0" * int(len(str(x)) / 2 - 1))))
+        while a * a > x:
+            a = int(a / 2)
+        if a * a == x:
+            return a
+        while a * a < x:
+            a += 1
+        if a * a == x:
+            return a
+        return a - 1
