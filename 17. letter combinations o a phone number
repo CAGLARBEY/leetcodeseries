@@ -1,0 +1,19 @@
+class Solution:
+    def letterCombinations(self, digits: str) -> List[str]:
+        phone_map = {
+        "2": "abc", "3": "def", "4": "ghi", "5": "jkl",
+        "6": "mno", "7": "pqrs", "8": "tuv", "9": "wxyz"}
+        if not digits:
+            return []
+        result = [] 
+        stack = [("", digits)]
+        while stack:
+            path, remaining_digits = stack.pop()
+            if not remaining_digits:
+                result.append(path)
+            else:
+                for letter in phone_map[remaining_digits[0]]:
+                    stack.append((path + letter, remaining_digits[1:]))
+        
+        return result
+
