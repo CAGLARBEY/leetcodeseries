@@ -1,0 +1,6 @@
+class Solution:
+    def addStrings(self, num1: str, num2: str) -> str:
+        sys.set_int_max_str_digits(5500)
+        sum2=int(num1)+int(num2)
+        strsum=str(sum2)
+        return strsum
