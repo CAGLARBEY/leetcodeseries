@@ -1,0 +1,6 @@
+class Solution:
+    def isPowerOfTwo(self, n: int) -> bool:
+        string="{:b}".format(n)
+        if 2**(len(string)-1)==n:
+            return True
+        return False
