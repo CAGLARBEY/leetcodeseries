@@ -1,0 +1,7 @@
+class Solution:
+    def isFascinating(self, n: int) -> bool:
+        a=2*n
+        b=3*n
+        c=str(n)+str(a)+str(b)
+        set1=set(c)
+        return len(c)==len(set1) and "0" not in c
