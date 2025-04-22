@@ -1,0 +1,18 @@
+import math
+class Solution:
+    def divide(self, dividend: int, divisor: int) -> int:
+        a = abs(dividend)
+        b = abs(divisor)
+        answer = 0
+        while a >= b:
+            tmp = b
+            mul = 1
+            while a >= tmp:
+                a -= tmp
+                answer += mul
+                mul += mul
+                tmp += tmp
+        if (dividend < 0) != (divisor < 0):
+            answer = -answer
+        return min(2147483647, max(-2147483648, answer))
+        
