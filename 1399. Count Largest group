@@ -1,0 +1,21 @@
+class Solution:
+    def countLargestGroup(self, n: int) -> int:
+        result = {}
+
+        for i in range(1 , n+1):
+            digit = 0
+            for char in str(i):
+                digit += int(char)
+            if digit not in result:
+                result[digit] = 0
+            result[digit] += 1
+        
+        max_count = max(result.values())
+
+        number = 0
+
+        for key, count in result.items():
+            if max_count == count:
+                number += 1
+                
+        return number
